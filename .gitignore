@@ -1,0 +1,12 @@
+bin/*
+bin
+gen
+gen/*
+ignored
+ignored/*
+assets
+assets/*
+.project
+_site/
+.DS_store
+.DS_Store

@@ -1,0 +1,105 @@
+<div id="player" class="pull-left" style="margin:20px 0 0 20px;" data-audio-url="http://assets.91wedding.com/2/bucket/this-ring.mp3">
+  <span id="player-play-control" class="player-play-gray"></span>
+  <span id="player-pause-control" class="player-pause-gray"></span>
+  <span id="player-stop-control" class="player-stop-gray"></span>
+  <span style="color:#df4966;font-family: Times New Roman;vertical-align: top;margin-left: 10px;font-size: 16px;">MUSIC</span>
+  <div style="width:100%; height:2px; background-color: #ababab;">
+    <div id='player-progress' style="width:0; height:2px; background-color:#df4966;"></div>
+  </div>
+</div>
+
+<script>
+soundManager.setup({
+  url: '/soundmanager/swf',
+  flashVersion: 9, // optional: shiny features (default = 8)
+  // optional: ignore Flash where possible, use 100% HTML5 mode
+  // preferFlash: false,
+  onready: function() {
+    new Player($('#player').data('audio-url'));
+  }
+});
+
+function Player(url) {
+  var self = this;
+  this.ui = this.UI();
+
+  this.soundObject = soundManager.createSound({
+    id: 'music',
+    url: url,
+    whileloading: function() { self.whileloading() },
+    whileplaying: function() { self.whileplaying() },
+    onpause: function() { self.ui.paused() },
+    onplay: function() { self.ui.playing() },
+    onresume: function() { self.ui.playing() },
+    onfinish: function() { self.onfinish() },
+    onstop: function() { self.ui.stopped() }
+  })
+
+  this.soundObject.play();
+}
+
+Player.prototype.whileloading = function() {
+  this.ui.loadChanged(this.soundObject.bytesLoaded * 100 / this.soundObject.bytesTotal);
+}
+
+Player.prototype.whileplaying = function() {
+  this.ui.progressChanged(this.soundObject.position * 100 / this.soundObject.duration);
+}
+
+Player.prototype.onfinish = function() {
+  this.soundObject.play();
+}
+
+Player.prototype.UI = function() {
+  var player = this;
+
+  $('#player-play-control').click(function() {
+    if ($('#player-play-control').hasClass('player-play-gray')) {
+      return;
+    }
+
+    player.soundObject.play();
+  })
+
+  $('#player-pause-control').click(function() {
+    if ($('#player-pause-control').hasClass('player-pause-gray')) {
+      return;
+    }
+
+    player.soundObject.pause();
+  })
+
+  $('#player-stop-control').click(function() {
+    if ($('#player-stop-control').hasClass('player-stop-gray')) {
+      return;
+    }
+
+    player.soundObject.stop();
+  })
+
+  return {
+    paused: function() {
+      $('#player-play-control').prop('class', 'player-play');
+      $('#player-pause-control').prop('class', 'player-pause-gray');
+      $('#player-stop-control').prop('class', 'player-stop-gray');
+    },
+    stopped: function() {
+      $('#player-play-control').prop('class', 'player-play');
+      $('#player-pause-control').prop('class', 'player-pause-gray');
+      $('#player-stop-control').prop('class', 'player-stop-gray');
+      this.progressChanged(0);
+    },
+    playing: function() {
+      $('#player-play-control').prop('class', 'player-play-gray');
+      $('#player-pause-control').prop('class', 'player-pause');
+      $('#player-stop-control').prop('class', 'player-stop');
+    },
+    progressChanged: function(progress) {
+      $('#player-progress').css({width: progress + "%"});
+    },
+    loadChanged: function(progress) {
+      //$('#player-progress').css({width: progress + "%"});
+    }
+  }
+}
+</script>

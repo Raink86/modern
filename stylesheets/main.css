@@ -1,0 +1,329 @@
+/*********** bootstrap-override ************/
+
+body {
+  font-size: 14px;
+  font-family:Tahoma,Verdana,STHeiTi,simsun,sans-serif;
+  background-color: #eee;
+}
+
+
+::-moz-selection { background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/************** Player ****************/
+.player-play,
+.player-play-gray,
+.player-pause,
+.player-pause-gray,
+.player-stop,
+.player-stop-gray {
+  background-image: url('/images/music-controls.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.player-play {
+  background-position: -4px -3px;
+  width: 18px;
+  height: 18px;
+}
+
+.player-play-gray {
+  background-position: -4px -24px;
+  width: 18px;
+  height: 18px;
+}
+
+.player-pause {
+  background-position: -25px -3px;
+  width: 18px;
+  height: 18px;
+}
+
+.player-pause-gray {
+  background-position: -25px -24px;
+  width: 18px;
+  height: 18px;
+}
+
+.player-stop {
+  background-position: -46px -3px;
+  width: 18px;
+  height: 18px;
+}
+
+.player-stop-gray {
+  background-position: -46px -24px;
+  width: 18px;
+  height: 18px;
+}
+
+/************* navigation styles *************/
+.navigation {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 61px;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+}
+
+#logo {
+  margin: 0;
+  font-size: 1.7em;
+  color: #666;
+  width: 300px;
+  height: 50px;
+  position: relative;
+}
+
+#logo:hover {
+  text-decoration: none;
+}
+
+.navigation ul {
+  list-style: none outside none;
+  margin: 0;
+}
+
+.navigation ul li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 7px 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.navigation ul li:hover {
+  background-color: #4a8fa3;
+}
+
+.navigation ul li a {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  color: #656464;
+  font-size: 25px;
+  display: block;
+  padding: 5px 0;
+}
+
+.navigation ul li:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation ul li.current a {
+  border-bottom: 1px solid #2B2B2B;
+  border-top: 1px solid #2B2B2B;
+  color: #2B2B2B;
+}
+
+/*************home pages**************/
+#home {
+  padding: 0;
+  background-color: white;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.cover-image {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#invitation-container {
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  padding: 20px;
+  z-index: 100;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.4);
+}
+
+#invitation-container h4 {
+  color: #df4966;
+  font-family: STKaiti;
+}
+
+#invitation-container .glyphicon {
+  color: #df4966;
+}
+
+/*************** timeline  ***************/
+
+#story {
+  height: 469px;
+  margin-top: -200px;
+  overflow: hidden;
+}
+
+#story .storyjs-embed.sized-embed {
+  border: none;
+}
+
+#story .vco-timeline .vco-navigation {
+  display: none;
+}
+
+#story .vco-storyjs .vco-feature .vco-slider {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#story .vco-storyjs h1,
+#story .vco-storyjs h2,
+#story .vco-storyjs h3,
+#story .vco-storyjs h4,
+#story .vco-storyjs h5,
+#story .vco-storyjs h6,
+#story .vco-storyjs h2.date,
+#story .vco-slider .slider-item .content .content-container .media .media-wrapper .caption,
+#story .vco-storyjs .vco-feature p {
+  color: white;
+}
+
+#story .vco-slider .slider-item .content .content-container .media {
+  padding-top: 40px;
+}
+
+#story .vco-storyjs .vco-container.vco-main {
+  background-color: #4a8fa3;
+  padding: 40px 0;
+}
+
+#story .vco-slider .nav-previous .icon {
+  background-position: -208px 0;
+}
+
+#story .vco-slider .nav-next .icon {
+  background-position: -232px 0;
+}
+
+#story .vco-notouch .vco-slider .nav-previous:hover,
+#story .vco-notouch .vco-slider .nav-next:hover {
+  color: white;
+}
+
+/*************** map ************/
+.iw_poi_title {
+  color: #CC5522;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  padding-right: 13px;
+  white-space: nowrap
+}
+
+.iw_poi_content {
+  font: 12px arial,sans-serif;
+  overflow: visible;
+  padding-top: 4px;
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word
+}
+
+#dituContent {
+  width: 100%;
+  height: 550px;
+}
+
+#dituContent img {
+  max-width: none;
+}
+
+/*************** photos ************/
+#photos .thumbnails {
+  padding: 10px 0;
+  font-size: 0;
+}
+
+#photos .thumbnails li {
+  list-style: none;
+  display: inline-block;
+}
+
+#photos .thumbnails li img:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari and Chrome */
+  transform: scale(1.1);
+}
+
+#fancybox-close {
+  right: -35px;
+}
+
+#photos .nav-justified,
+#photos .nav>li>a:hover,
+#photos .nav>li>a:focus {
+  background-color: #4a8fa3;
+}
+
+#photos .nav-pills>li.active>a,
+#photos .nav-pills>li.active>a:hover,
+#photos .nav-pills>li.active>a:focus {
+  background-color: #f5566e;
+}
+
+#photos .nav-pills>li>a {
+  border-radius: 0;
+  color: white;
+}
+
+/*************** wedding ************/
+
+#wedding form,
+#wedding .block {
+  color: white;
+}
+
+#wedding .form-control {
+  width: 60%;
+  display: inline-block;
+  border-radius: 0;
+}
+
+#wedding .btn {
+  border-radius: 0;
+}
+
+#wedding form label {
+  display: block;
+}
+
+#wedding form label.error {
+  color: red;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#wedding .block {
+  height: 220px;
+  text-align: center;
+  padding: 50px;
+  word-wrap: break-word;
+}
+
+#wedding .block .glyphicon {
+  font-size: 40px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+#wedding .modal-content {
+  border-radius: 0;
+}
+
+/************** footer **************/
+footer {
+  text-align: center;
+  padding: 40px;
+}
+
+footer a {
+  color: gray;
+}
