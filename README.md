@@ -1,6 +1,6 @@
-# rainbow
+# Modern
 
-演示地址：[rainbow.91wedding.com](http://rainbow.91wedding.com)
+演示地址：[modern.91wedding.com](http://modern.91wedding.com)
 
 ## 使用说明
 
